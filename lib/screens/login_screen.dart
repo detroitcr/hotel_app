@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hotel_ui/screens/sign_up.dart';
 import 'package:hotel_ui/utils/color.dart';
 import 'package:hotel_ui/widgets/text_field_input.dart';
 
@@ -32,7 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
       body: SafeArea(
         // we need to some adding padding
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 34),
+          padding: EdgeInsets.symmetric(horizontal: 34, vertical: 40),
           width: double.infinity,
           child: Column(
             // centered like horizontal direction x axis
@@ -70,7 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               // button login
               InkWell(
-                onTap: (){
+                onTap: () {
                   print('cr');
                 },
                 child: Container(
@@ -81,7 +82,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   decoration: ShapeDecoration(
                     color: blueColor,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(4),),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(4),
+                      ),
                     ),
                   ),
                 ),
@@ -107,11 +110,15 @@ class _LoginScreenState extends State<LoginScreen> {
                     width: 8,
                   ),
                   GestureDetector(
-                    onTap: (){
-                      print('vikas');
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return SignUpScreen();
+                      }));
                     },
                     child: Container(
-                      child: Text('Sign up',
+                      child: Text(
+                        'Sign up',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                         ),

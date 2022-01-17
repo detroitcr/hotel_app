@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hotel_ui/screens/login_screen.dart';
 import 'package:hotel_ui/utils/color.dart';
 import 'package:hotel_ui/widgets/text_field_input.dart';
 import 'package:flutter_svg/svg.dart';
@@ -36,7 +37,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       body: SafeArea(
         // we need to some adding padding
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 34),
+          padding: EdgeInsets.symmetric(horizontal: 34, vertical: 40),
           width: double.infinity,
           child: Column(
             // centered like horizontal direction x axis
@@ -48,19 +49,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 color: primaryColor,
                 height: 64,
               ),
-              SizedBox(
-                height: 64,
-              ),
+
               // circular widget to accept and show our selectedfile
-              Stack(
-                children: [
-                  CircleAvatar(
-                    radius: 64,
-                    backgroundImage: NetworkImage(
-                        'https://images.unsplash.com/photo-1642056583446-9223e0684e19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'),
-                  ),
-                ],
-              ),
+              // Stack(
+              //   children: [
+              //     CircleAvatar(
+              //       radius: 64,
+              //       backgroundImage: NetworkImage(
+              //           'https://images.unsplash.com/photo-1642056583446-9223e0684e19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'),
+              //     ),
+              //   ],
+              // ),
               SizedBox(
                 height: 24,
               ),
@@ -95,23 +94,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
               SizedBox(
                 height: 24,
               ),
-
-              CustomTextField(
-                // we have to create a variable for text editing controller
-                textEditingController: _biocontroller,
-                textInputType: TextInputType.text,
-                hintText: 'Enter Your bio',
-              ),
-              SizedBox(
-                height: 24,
-              ),
               // button login
               InkWell(
                 onTap: () {
                   print('cr');
                 },
                 child: Container(
-                  child: Text('Log-in'),
+                  child: Text('Sign Up-in'),
                   width: double.infinity,
                   padding: EdgeInsets.symmetric(vertical: 12),
                   alignment: Alignment.center,
@@ -147,11 +136,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      print('vikas');
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return LoginScreen();
+                      }));
                     },
                     child: Container(
                       child: Text(
-                        'Sign up',
+                        'Login up',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                         ),
