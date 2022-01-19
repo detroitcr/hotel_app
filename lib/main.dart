@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'utils/color.dart';
-import 'package:hotel_ui/screens/login_screen.dart';
 import 'package:hotel_ui/screens/sign_up.dart';
 
-void main(){
+import 'utils/color.dart';
+
+void main() {
   runApp((MyApp()));
 }
 
@@ -14,9 +14,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor:mobileBackgroundColor),
-      home: LoginScreen(),
-     // home:SignUpScreen(),
+      theme: ThemeData.dark()
+          .copyWith(scaffoldBackgroundColor: mobileBackgroundColor),
+      //home: LoginScreen(),
+      home: SignUpScreen(),
     );
   }
 }

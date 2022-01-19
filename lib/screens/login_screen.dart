@@ -33,7 +33,10 @@ class _LoginScreenState extends State<LoginScreen> {
       body: SafeArea(
         // we need to some adding padding
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 34, vertical: 40),
+          padding: EdgeInsets.symmetric(
+            horizontal: 34,
+            vertical: 40,
+          ),
           width: double.infinity,
           child: Column(
             // centered like horizontal direction x axis
@@ -131,9 +134,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ],
           ),
         ),
-      ), // body: Center(
-      //   child: Text('From Login Screen'),
-      // ),
+      ),
     );
   }
 }
